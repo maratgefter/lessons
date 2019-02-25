@@ -14,15 +14,11 @@
     </form>
 
 
-<?php
-
-    
-    
-    $str = file_get_contents('x.xml');
+<?php      
     $st = "<post>\n\t<nik>\n\t\t".$_POST['name']."\n\t</nik>\n\t<msg>\n\t\t".$_POST['message']."\n\t</msg>\n</post>"."\n\n";
     file_put_contents("x.xml", $st, FILE_APPEND);
     include 'func.php';
-
+    $str = file_get_contents('x.xml');
     /*$post = get_post($str);
     print_r($post[1]);
 
