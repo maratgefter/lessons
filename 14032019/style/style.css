@@ -1,0 +1,32 @@
+#bd_tab {
+    border-collapse: collapse;
+}
+
+#bd_tab td {
+    border: 1px solid black;
+}
+
+#bd_tab tr:hover {
+    background-color: aquamarine;
+}
+
+tr:nth-child(2n) {
+    background-color: red;
+}
+
+tr:nth-child(2n+1) {
+    background-color: aliceblue;
+}
+
+#ban {
+    position: absolute;
+    width: 1400px;
+    top: 300px;
+    left: 100px;
+    font-size: 150px;
+    color: red;
+    transform: rotate3d(1, 1, 1, 20deg);
+    border: 1px solid black;
+    background: aquamarine;
+
+}

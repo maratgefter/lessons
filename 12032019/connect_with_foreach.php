@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
     <title>Document</title>
 </head>
 <body>
@@ -14,9 +15,12 @@
             echo "Не удалось подключиться к MySQL: (" . mysqli_connect_errno() . ") " . mysqli_connect_error();
         }
 
+        $insert_query = "INSERT INTO `messages` (user_name, message) VALUES ('".$_POST['name']."', '".$_POST['message']."')";
+        mysqli_query($link, $insert_query);
+
         $res = mysqli_query($link, "SELECT * FROM messages");
 
-        echo "<table border='1'>";
+        echo "<table id="bd_tab">";
         
         while ($row = mysqli_fetch_array($res, MYSQLI_ASSOC)) {
             echo '<tr>';
@@ -39,6 +43,7 @@
     </form>
     <?php
         print_r ($_POST);
+        
     ?>
 </body>
 </html>
