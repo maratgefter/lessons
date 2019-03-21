@@ -140,4 +140,3 @@ LIKE 'Иванов%'--удалить всех Ивановых
 DELETE
 FROM vedomost
 WHERE id=9--удалить ID 10
-
