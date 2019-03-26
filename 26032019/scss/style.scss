@@ -1,0 +1,96 @@
+// $color1: green;
+
+// body {
+//     background: red;
+//     color: $color1;
+// }
+
+// .cl1 {
+//     color: $color1;
+// }
+
+// #tab {
+//     tr :nth-child(2n){
+//         td {
+//             background: red;
+//         }
+//     }
+
+//     tr :nth-child(2n+1){
+//         td {
+//             background: green;
+//         }
+//     &:hover {
+//         color: blue;
+//     }
+//     }
+// }
+
+@import "style2.scss";
+
+
+#tab {
+    @extend %border;
+    border-collapse: collapse;
+    border: 2px solid black;
+
+    tr:nth-child(2n+1) {
+        td:nth-child(2n+1) {
+            background: $color4;
+            &:hover {
+                background: $color1;
+                transition: 1s ease;
+            }
+        }
+    }
+
+    tr:nth-child(2n) {
+        td:nth-child(2n) {
+            background: $color5;
+            opacity: 0.5;
+
+            &:hover {
+                background: $color1;
+                transition: 1s ease;
+            }
+        }
+    }
+
+    td {
+        width: 50px;
+        height: 50px;
+    }
+
+    td:hover {
+        background: $color1;
+        transition: 1s ease;
+    }
+}
+
+@mixin border-rad($rad){
+    border-bottom-left-radius: $rad;
+    border-top-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-top-right-radius: $rad;
+}
+
+.class1 {
+    width: 600px;
+    height: 600px;
+    border: 6px solid blueviolet; 
+    @include border-rad(10%);
+    @extend %border;
+}
+
+.class2 {
+    width: 600px-40px;
+    height: 600px;
+    border: 6px solid greenyellow; 
+    @include border-rad(50%);
+    @extend %border;
+}
+
+%border {
+    border-bottom-color: rgb(21, 187, 49);
+    border-top-color: red;
+}
