@@ -17,7 +17,7 @@
         <input <?=!empty($_SESSION['bad_form']['bad_fio'])?'class="bad"':'';?> type="text" name="name" placeholder="Введите Ваше имя" value="<?=$_SESSION['post']['name']?>"> 
         <?="<div class='fail'>".$_SESSION['bad_form']['bad_age']."</div>"?>
         <input <?=!empty($_SESSION['bad_form']['bad_age'])?'class="bad"':'';?> type="number" name="age" placeholder="Введите Ваш возраст" value="<?=$_SESSION['post']['age']?>">
-        <input type="email" name="post" placeholder="Введите Ваш электронный адрес">
+        <input type="email" name="post" placeholder="Введите Ваш электронный адрес" value="<?=$_SESSION['post']['post']?>">
         <?="<div class='fail'>".$_SESSION['bad_form']['bad_phone_number']."</div>"?>
         <input <?=!empty($_SESSION['bad_form']['bad_phone_number'])?'class="bad"':'';?> type="tel" name="phone_number" placeholder="Введите Ваш номер телефона" value="<?=$_SESSION['post']['phone_number']?>">
         <?="<div class='fail'>".$_SESSION['bad_form']['bad_mark']."</div>"?>
