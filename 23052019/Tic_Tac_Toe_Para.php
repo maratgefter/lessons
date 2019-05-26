@@ -157,4 +157,8 @@ class Tic_Tac_Toe {
         }
         return "";
     }
+
+    function newGame() {
+        session_unset();
+    }
 }
