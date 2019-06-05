@@ -55,8 +55,8 @@
         
         show($obj->query(), $obj->get_fields(), $_GET['delete']);
 
-        $obj->add(['city' => "smart"]);
-        echo $obj->add(['city' => "smart"]);
+        
+       // echo $obj->add(['name' => "Vasya", 'age' => "22", 'city' => "smart"]);
     ?>
     
 </body>
