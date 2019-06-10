@@ -214,9 +214,10 @@ class DB_entity
     function edit($id, $array)
     {
         foreach ($array as $key => $value) {
-            
+            $new_array[] = "$key='$value'";
         }
-        //$this->execute_sql("UPDATE $this->table_name SET ".implode("','", $arr) . "WHERE id='$id');
+        $this->execute_sql("UPDATE $this->table_name SET ".implode(',', $new_array) . "WHERE id=$id");
+        return $this->link->affected_rows;
     }
 
     

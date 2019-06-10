@@ -72,20 +72,24 @@
 
         // echo $obj->page_count();
 
-        echo "<hr>";
-        $obj->set_page_size(3);
-        if (isset($_GET['page'])) {
-            $obj->set_page($_GET['page']);
-        }
+        // echo "<hr>";
+        // $obj->set_page_size(3);
+        // if (isset($_GET['page'])) {
+        //     $obj->set_page($_GET['page']);
+        // }
 
-        echo $obj->clear_table();
+        //echo $obj->clear_table();
 
+        //show($obj->query(), $obj->get_fields());
+        //show($obj->query(), $obj->get_fields());
+
+        // for ($i = 0; $i < $obj->page_count(); $i++) {
+        //     echo "<a href='?page=$i'>".($i + 1)." |</a>";
+        // }
         show($obj->query(), $obj->get_fields());
-        // show($obj->query(), $obj->get_fields());
-
-        for ($i = 0; $i < $obj->page_count(); $i++) {
-            echo "<a href='?page=$i'>".($i + 1)." |</a>";
-        }
+        echo "<hr>";
+        print_r($obj->edit(90, ["name"=>"Gay Lussak", "age" => 25, "city"=>"Vit"]));
+        show($obj->query(), $obj->get_fields());
 
         
     ?>
