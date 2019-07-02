@@ -4,13 +4,18 @@ $siteClass = (isset($_GET["t"]) ? $_GET["t"] : 'site') . 'Controller';
 
 $method = 'action' . (isset($_GET["a"]) ? $_GET["a"] : 'About');
 
-if(class_exists($siteClass)) {
-    $MVC = new $siteClass();
+$view = 'siteView';
 
-    if(method_exists($MVC, $method)) {
-        $MVC -> {$method}();
+if(class_exists($siteClass)) {
+    if(class_exists($view)) { 
+        $MVC = new $siteClass(new $view);  
+        if(method_exists($MVC, $method)) {
+            $MVC -> {$method}();
+        } else {
+            echo "Нет такого метода: $method";
+        }
     } else {
-        echo "Нет такого метода: $method";
+        echo "нет такого класса: $view";
     }
 } else {
     echo "Нет такого класса: $siteClass";

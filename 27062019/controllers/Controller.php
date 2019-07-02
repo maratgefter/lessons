@@ -2,15 +2,17 @@
 
 class Controller
 {
-    function __construct()
+    public $view;
+
+    function __construct($view)
     {
-        
+        $this->view = $view;
     }
 
-    // function render($viewName, $viewData = [])
-    // {
-    //     $this->view->render->($viewName, $viewData);
-    // }
+    function render($viewName, $viewData = [])
+    {
+        $this->view->render($viewName, $viewData);
+    }
 
     function redirect($location)
     {
@@ -26,4 +28,5 @@ class Controller
     {
         return strtolower(preg_replace('/^action/', '', debug_backtrace()[1]['function']));
     }
+
 } 
