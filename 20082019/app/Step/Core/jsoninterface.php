@@ -7,11 +7,11 @@
 
         public function get();
 
-        public function del($id);
+        public function del(int $id);
 
-        public function edit($id, $array);
+        public function edit(int $id, array $array);
 
-        public function add($array);
+        public function add(array $array);
         
     }
 
